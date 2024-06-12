@@ -1,4 +1,5 @@
 const URL = 'https://fakestoreapi.com/products?limit=5';
+const ID_URL = "";
 
 fetch(URL)
     .then(res=>res.json())
@@ -7,6 +8,7 @@ fetch(URL)
 
         json.map((cloth) => {
             const card = document.createElement("li");
+            card.onclick = () => onClick(cloth.id);
             
             const cardImage = card.appendChild(document.createElement("img"));
             cardImage.src = cloth.image;
@@ -36,3 +38,10 @@ fetch(URL)
         })
 
     });
+
+    let onClick = (id) => {
+        console.log(id);
+
+        window.location.href = `./.html?id=${id}`;
+
+    }
