@@ -29,6 +29,7 @@ fetch(URL)
 
             const contentBtn = contentButtons.appendChild(document.createElement("button"));
             contentBtn.innerText = "Añadir";
+            contentBtn.onclick = () => onAdd(cloth);
 
             cardContent.appendChild(contentButtons);
 
@@ -42,6 +43,15 @@ fetch(URL)
     let onClick = (id) => {
         console.log(id);
 
-        window.location.href = `./.html?id=${id}`;
+        window.location.href = `./../product-view/product-view.html?id=${id}`;
 
+    }
+
+    let onAdd = (object) => {
+        let prevItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+        prevItems.push(object);
+        localStorage.setItem("selectedItems", JSON.stringify(prevItems));
+
+        console.log(prevItems);
+        event.stopPropagation();
     }
