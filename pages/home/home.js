@@ -29,7 +29,7 @@ fetch(URL)
 
             const contentBtn = contentButtons.appendChild(document.createElement("button"));
             contentBtn.innerText = "Añadir";
-            contentBtn.onclick = () => onAdd(cloth);
+            contentBtn.onclick = () => onAdd(contentBtn, cloth);
 
             cardContent.appendChild(contentButtons);
 
@@ -72,14 +72,35 @@ fetch(URL)
 
     }
 
-    let onAdd = (object) => {
-        let prevItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
-        prevItems.push(object);
-        localStorage.setItem("selectedItems", JSON.stringify(prevItems));
-
-        const toastBuy = document.getElementById('toastBuy');
-        bootstrap.Toast.getOrCreateInstance(toastBuy).show();
-
-        console.log(prevItems);
+    let onAdd = (btn, object) => {
         event.stopPropagation();
+        console.log(btn);
+
+        let prevItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+        let isDeleted = false;
+        let deleteObject;
+
+        prevItems.forEach((element, index) => {
+            if (element.id == object.id) {
+                isDeleted = true;
+                deleteObject = index;
+            } 
+        });
+
+
+        if (isDeleted) {
+            prevItems.splice(deleteObject, 1);
+            btn.innerText = "Añadir";
+
+        } else {
+            prevItems.push(object);
+            btn.innerText = "Cancelar";
+    
+            const toastBuy = document.getElementById('toastBuy');
+            bootstrap.Toast.getOrCreateInstance(toastBuy).show();
+    
+            console.log(prevItems);
+        }
+
+        localStorage.setItem("selectedItems", JSON.stringify(prevItems));
     }
