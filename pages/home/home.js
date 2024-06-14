@@ -75,6 +75,9 @@ fetch(URL)
         prevItems.push(object);
         localStorage.setItem("selectedItems", JSON.stringify(prevItems));
 
+        const toastBuy = document.getElementById('toastBuy');
+        bootstrap.Toast.getOrCreateInstance(toastBuy).show();
+
         console.log(prevItems);
         event.stopPropagation();
     }
