@@ -1,4 +1,4 @@
-const URL = 'https://fakestoreapi.com/products?limit=5';
+const URL = 'https://fakestoreapi.com/products?limit=20';
 const ID_URL = "";
 
 fetch(URL)
@@ -35,6 +35,7 @@ fetch(URL)
 
 
             card.classList.add("d-flex", "flex-row", "align-items-center", "gap-2", "border-bottom", "border-secondary");
+            card.style.maxWidth = "600px";
 
             cardContent.classList.add("p-2");
             contentTitle.classList.add("fs-6");
