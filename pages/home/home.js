@@ -1,4 +1,4 @@
-const URL = 'https://fakestoreapi.com/products?limit=5';
+const URL = 'https://fakestoreapi.com/products?limit=18';
 const ID_URL = "";
 
 fetch(URL)
@@ -29,10 +29,35 @@ fetch(URL)
 
             const contentBtn = contentButtons.appendChild(document.createElement("button"));
             contentBtn.innerText = "Añadir";
-            contentBtn.onclick = () => onAdd(cloth);
+            contentBtn.onclick = () => onAdd(contentBtn, cloth);
 
             cardContent.appendChild(contentButtons);
 
+
+            card.classList.add("d-flex", "flex-row", "align-items-center", "gap-2", "border-bottom", "border-secondary");
+            card.style.maxWidth = "600px";
+
+            cardContent.classList.add("p-2");
+
+            contentTitle.classList.add("fs-6");
+            contentTitle.style.display = "-webkit-box";
+            contentTitle.style.webkitBoxOrient = "vertical";
+            contentTitle.style.webkitLineClamp = 1;
+            contentTitle.style.lineClamp = 1;
+            contentTitle.style.overflow = "hidden";
+
+            contentDescription.style.display = "-webkit-box";
+            contentDescription.style.webkitBoxOrient = "vertical";
+            contentDescription.style.webkitLineClamp = 2;
+            contentDescription.style.lineClamp = 2;
+            contentDescription.style.overflow = "hidden";
+
+            contentButtons.classList.add("d-flex", "flex-row", "justify-content-between");
+            contentPrice.classList.add("m-0", "align-self-end");
+            contentBtn.classList.add("text-white", "border-0", "rounded");
+            contentBtn.style.height = "32px";
+            contentBtn.style.width = "104px";
+            contentBtn.style.backgroundColor = "#007D8A";
 
 
             document.getElementById("cardsContainer").appendChild(card);
@@ -47,11 +72,35 @@ fetch(URL)
 
     }
 
-    let onAdd = (object) => {
-        let prevItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
-        prevItems.push(object);
-        localStorage.setItem("selectedItems", JSON.stringify(prevItems));
-
-        console.log(prevItems);
+    let onAdd = (btn, object) => {
         event.stopPropagation();
+        console.log(btn);
+
+        let prevItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+        let isDeleted = false;
+        let deleteObject;
+
+        prevItems.forEach((element, index) => {
+            if (element.id == object.id) {
+                isDeleted = true;
+                deleteObject = index;
+            } 
+        });
+
+
+        if (isDeleted) {
+            prevItems.splice(deleteObject, 1);
+            btn.innerText = "Añadir";
+
+        } else {
+            prevItems.push(object);
+            btn.innerText = "Cancelar";
+    
+            const toastBuy = document.getElementById('toastBuy');
+            bootstrap.Toast.getOrCreateInstance(toastBuy).show();
+    
+            console.log(prevItems);
+        }
+
+        localStorage.setItem("selectedItems", JSON.stringify(prevItems));
     }
