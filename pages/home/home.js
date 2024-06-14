@@ -1,4 +1,4 @@
-const URL = 'https://fakestoreapi.com/products?limit=20';
+const URL = 'https://fakestoreapi.com/products?limit=18';
 const ID_URL = "";
 
 fetch(URL)
@@ -38,6 +38,7 @@ fetch(URL)
             card.style.maxWidth = "600px";
 
             cardContent.classList.add("p-2");
+
             contentTitle.classList.add("fs-6");
             contentTitle.style.display = "-webkit-box";
             contentTitle.style.webkitBoxOrient = "vertical";
