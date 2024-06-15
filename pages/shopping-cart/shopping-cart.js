@@ -100,5 +100,24 @@ let onAdd = (btn, object) => {
         console.log(prevItems);
     }
 
+    totalPrice(prevItems);
+
     localStorage.setItem("selectedItems", JSON.stringify(prevItems));
 }
+
+let totalPrice = (arr) => {
+    let price = arr.reduce((total, object) => {
+        let price = object.price + total;
+
+        return (
+            price
+        )
+
+    }, 0)
+
+    return (
+        document.getElementById("price").innerText = `Total: ${price.toFixed(2)}€`
+    )
+}
+
+totalPrice(storage);
