@@ -1,5 +1,5 @@
 const URL = 'https://fakestoreapi.com/products?limit=18';
-const ID_URL = "";
+let storage = JSON.parse(localStorage.getItem("selectedItems")) || [];
 
 fetch(URL)
     .then(res=>res.json())
@@ -58,6 +58,12 @@ fetch(URL)
             contentBtn.style.height = "32px";
             contentBtn.style.width = "104px";
             contentBtn.style.backgroundColor = "#007D8A";
+
+            storage.forEach((element) => {
+                if (element.id == cloth.id) {
+                    contentBtn.innerText = "Cancelar";
+                } 
+            });
 
 
             document.getElementById("cardsContainer").appendChild(card);
