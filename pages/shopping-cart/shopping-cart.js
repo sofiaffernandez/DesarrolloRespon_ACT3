@@ -126,3 +126,11 @@ let totalPrice = (arr) => {
 }
 
 totalPrice(storage);
+
+let goTo = (path) => {
+    window.location.href = path;
+}
+
+const onClear = () => {
+    localStorage.setItem("selectedItems", JSON.stringify([]));
+}

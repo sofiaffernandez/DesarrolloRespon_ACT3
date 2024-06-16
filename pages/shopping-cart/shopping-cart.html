@@ -81,9 +81,29 @@
         <p class="mx-auto mb-0 ps-4 pb-4 text-white" style="max-width: 1280px;">Total: <span class="total"></span></p>
 
         <div class="d-flex flex-column gap-2 px-4 mb-4">
-          <button class="btn btn-primary border border-0 rounded-0" type="button" style="background-color: #007D8A; height: 48px;">Acceder al pago</button>
-          <button class="btn btn-outline-primary border border-0 rounded-0" type="button" style="color: #007D8A; background-color: #DDFFFD; height: 48px;" >Continuar comprando</button>
-          <button class="btn fw-bold text-decoration-underline" style="color: #007D8A; height: 48px;">Eliminar carrito</button>
+          <button 
+            class="btn btn-primary border border-0 rounded-0" 
+            type="button" style="background-color: #007D8A; height: 48px;"
+            onclick="goTo()" 
+          >
+              Acceder al pago
+          </button>
+
+          <button 
+            class="btn btn-outline-primary border border-0 rounded-0" 
+            type="button" style="color: #007D8A; background-color: #DDFFFD; height: 48px;"
+            onclick="goTo('./../home/home.html')"
+          >
+              Continuar comprando
+          </button>
+
+          <button 
+            class="btn fw-bold text-decoration-underline" 
+            style="color: #007D8A; height: 48px;"
+            onclick= "onClear()"
+          >
+              Eliminar Carrito
+          </button>
         </div>
     </main>
 
@@ -106,6 +126,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script type="module" src="./shopping-cart.js"></script>
+    <script  src="./shopping-cart.js"></script>
 </body>
 </html>
