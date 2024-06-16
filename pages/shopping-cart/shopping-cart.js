@@ -143,4 +143,5 @@ let goTo = (path) => {
 
 const onClear = () => {
     localStorage.setItem("selectedItems", JSON.stringify([]));
+    location.reload();
 }

@@ -104,9 +104,9 @@
           </button>
   
           <button 
-            class="btn fw-bold text-decoration-underline" 
+            class="btn fw-bold text-decoration-underline"
+            data-bs-toggle="modal" data-bs-target="#myModal" 
             style="color: #007D8A; height: 48px; max-width: 600px;"
-            onclick= "onClear()"
           >
               Eliminar Carrito
           </button>
@@ -117,7 +117,7 @@
         
     </main>
 
-    <!-- TOAST COMPONENT  -->
+    <!-- TOAST COMPONENT -->
     <div class="position-absolute bottom-0 start-50 translate-middle">
         <div id="toastBuy" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
@@ -127,6 +127,25 @@
                 <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
+    </div>
+
+    <!-- MODAL COMPONENT -->
+    <div id="myModal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Eliminar carrito</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>¿Estás seguro que quieres eliminar el carrito?</p>
+          </div>
+          <div class="modal-footer">
+            <button id="myInput" type="button" class="btn btn-primary" onclick= "onClear()" data-bs-dismiss="modal">Eliminar carrito</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer class="bg-dark text-bg-dark d-flex align-items-center justify-content-center" style="height: 92px;">
