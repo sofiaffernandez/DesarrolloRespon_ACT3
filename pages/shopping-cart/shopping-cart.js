@@ -114,10 +114,15 @@ let totalPrice = (arr) => {
         )
 
     }, 0)
+    document.getElementById("subtotal").innerText = `${price.toFixed(2)}€`;
 
-    return (
-        document.getElementById("price").innerText = `Total: ${price.toFixed(2)}€`
-    )
+    let total = price + 3.99;
+
+    let writePrice = document.getElementsByClassName("total");
+
+    [...writePrice].forEach(element => {
+        element.innerText = `${total.toFixed(2)}€`
+    });
 }
 
 totalPrice(storage);

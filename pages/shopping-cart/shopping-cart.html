@@ -58,11 +58,27 @@
     </nav>
     <h2 class="text-white mx-auto ps-4 pt-4 pb-2 fw-light" style="max-width: 1280px;">Mi carrito</h2>
 
-    <main class="bg-light-subtle pt-2 mb-4">
-        <ul id="cardsContainer" class="px-4 mx-auto d-flex flex-column flex-xl-row justify-content-xl-between align-items-center flex-xl-wrap" style="max-width: 1280px;">
+    <main class="bg-secondary">
+        <div class="pt-2 px-4 mb-4 bg-light-subtle">
+          <div class="d-flex flex-row justify-content-between">
+            <p>Subtotal</p>
+            <p id="subtotal"></p>
+          </div>
+
+          <div class="d-flex flex-row justify-content-between">
+            <p>Gastos de envío</p>
+            <p>3.99€</p>
+          </div>
+          <hr/>
+          <div class="d-flex flex-row justify-content-between">
+            <p>Total</p>
+            <p class="total"></p>
+          </div>
+        </div>
+        <ul id="cardsContainer" class="bg-light-subtle px-4 mx-auto d-flex flex-column flex-xl-row justify-content-xl-between align-items-center flex-xl-wrap" style="max-width: 1280px;">
 
         </ul>
-        <p id="price" class="mx-auto mb-0 ps-4 pb-4" style="max-width: 1280px;"></p>
+        <p class="mx-auto mb-0 ps-4 pb-4 text-white" style="max-width: 1280px;">Total: <span class="total"></span></p>
     </main>
 
     <!-- TOAST COMPONENT  -->
