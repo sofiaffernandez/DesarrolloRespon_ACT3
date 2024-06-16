@@ -10,7 +10,7 @@
     <!-- añadir icon -->
     <title>Document</title>
 </head>
-<body class="bg-secondary">
+<body style="background-color: #3C3C3C;">
     <!-- NAVBAR COMPONENT -->
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
         <div class="container-fluid px-4" style="max-width: 1280px";>
@@ -58,7 +58,7 @@
     </nav>
     <h2 class="text-white mx-auto ps-4 pt-4 pb-2 fw-light" style="max-width: 1280px;">Mi carrito</h2>
 
-    <main class="bg-secondary">
+    <main style="background-color: #3C3C3C;">
         <div class="pt-2 px-4 mb-4 bg-light-subtle">
           <div class="d-flex flex-row justify-content-between">
             <p>Subtotal</p>
@@ -79,6 +79,12 @@
 
         </ul>
         <p class="mx-auto mb-0 ps-4 pb-4 text-white" style="max-width: 1280px;">Total: <span class="total"></span></p>
+
+        <div class="d-flex flex-column gap-2 px-4 mb-4">
+          <button class="btn btn-primary border border-0 rounded-0" type="button" style="background-color: #007D8A; height: 48px;">Acceder al pago</button>
+          <button class="btn btn-outline-primary border border-0 rounded-0" type="button" style="color: #007D8A; background-color: #DDFFFD; height: 48px;" >Continuar comprando</button>
+          <button class="btn fw-bold text-decoration-underline" style="color: #007D8A; height: 48px;">Eliminar carrito</button>
+        </div>
     </main>
 
     <!-- TOAST COMPONENT  -->
