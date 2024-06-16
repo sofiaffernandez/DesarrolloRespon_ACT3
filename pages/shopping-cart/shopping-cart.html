@@ -10,9 +10,9 @@
     <!-- añadir icon -->
     <title>Document</title>
 </head>
-<body class="" style="background-color: #3C3C3C;">
+<body style="background-color: #3C3C3C;">
     <!-- NAVBAR COMPONENT -->
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg" style="max-height: 64px;">
         <div class="container-fluid px-4" style="max-width: 1280px";>
           <a class="navbar-brand" href="#"> <h1 class="m-0">minimal.</h1> </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -56,11 +56,14 @@
           </div>
         </div>
     </nav>
-    <h2 class="text-white mx-auto ps-4 pt-4 pb-2 fw-light" style="max-width: 1280px;">Mi carrito</h2>
 
-    <main style="background-color: #3C3C3C;">
-      <div style="max-width: 1280px;" class="mx-auto d-xl-flex flex-row">
-        <div class="pt-2 px-4 mb-4 bg-light-subtle order-2 flex-grow-1  align-self-baseline" style="max-width: 600px;">
+    <main style="background-color: #3C3C3C; height: 100%; min-height: calc(100vh - (92px + 64px));">
+      <div class="mx-auto" style="max-width: 1280px;">
+        <h2 class="text-white mx-auto mx-xl-0 ps-4 pt-4 pb-2 fw-light" style="max-width: 600px;">Mi carrito</h2>
+      </div>
+
+      <div style="max-width: 1280px;" class="mx-auto d-xl-flex flex-row gap-4">
+        <div class="pt-2 px-4 mb-4 bg-light-subtle order-2 flex-grow-1 align-self-baseline mx-auto" style="max-width: 600px;">
           <div class="d-flex flex-row justify-content-between">
             <p>Subtotal</p>
             <p id="subtotal"></p>
@@ -76,37 +79,41 @@
             <p class="total"></p>
           </div>
         </div>
-        <ul id="cardsContainer" class="bg-light-subtle px-4 mx-auto d-flex flex-column">
+        <ul id="cardsContainer" class="bg-light-subtle px-4 mx-auto d-flex flex-column flex-grow-1" style="max-width: 600px;">
 
         </ul>
       </div>
 
-      <div class="d-flex flex-column gap-2 px-4 mx-lg-0 mb-4 mx-xl-auto" style="max-width: 1280px;">
-        <p class="mb-0 pb-4 text-white">Total: <span class="total"></span></p>
-        <button 
-          class="btn btn-primary border border-0 rounded-0" 
-          type="button" style="background-color: #007D8A; height: 48px; max-width: 600px;"
-          onclick="goTo()" 
-        >
-            Acceder al pago
-        </button>
+      <div class="mx-auto" style="max-width: 1280px;">
+        <div class="d-flex flex-column gap-2 px-4 mx-xl-0 mb-4 mx-auto" style="max-width: 600px;">
+          <p class="mb-0 pb-4 text-white">Total: <span class="total"></span></p>
+          <button 
+            class="btn btn-primary border border-0 rounded-0" 
+            type="button" style="background-color: #007D8A; height: 48px; max-width: 600px;"
+            onclick="goTo()" 
+          >
+              Acceder al pago
+          </button>
+  
+          <button 
+            class="btn btn-outline-primary border border-0 rounded-0" 
+            type="button" style="color: #007D8A; background-color: #DDFFFD; height: 48px; max-width: 600px;"
+            onclick="goTo('./../home/home.html')"
+          >
+              Continuar comprando
+          </button>
+  
+          <button 
+            class="btn fw-bold text-decoration-underline" 
+            style="color: #007D8A; height: 48px; max-width: 600px;"
+            onclick= "onClear()"
+          >
+              Eliminar Carrito
+          </button>
+        </div>
 
-        <button 
-          class="btn btn-outline-primary border border-0 rounded-0" 
-          type="button" style="color: #007D8A; background-color: #DDFFFD; height: 48px; max-width: 600px;"
-          onclick="goTo('./../home/home.html')"
-        >
-            Continuar comprando
-        </button>
-
-        <button 
-          class="btn fw-bold text-decoration-underline" 
-          style="color: #007D8A; height: 48px; max-width: 600px;"
-          onclick= "onClear()"
-        >
-            Eliminar Carrito
-        </button>
       </div>
+      
         
     </main>
 

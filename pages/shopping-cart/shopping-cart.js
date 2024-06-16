@@ -1,5 +1,15 @@
 let storage = JSON.parse(localStorage.getItem("selectedItems")) || [];
 
+if (storage.length === 0) {
+    const emptyCart = document.createElement("p");
+    emptyCart.innerText = "El carrito está vacío.";
+    emptyCart.classList.add("align-self-xl-center", "py-2", "my-auto");
+
+
+    document.getElementById("cardsContainer").appendChild(emptyCart);
+    
+}
+
 
 storage.map((cloth) => {
     const card = document.createElement("li");
