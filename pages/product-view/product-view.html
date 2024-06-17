@@ -55,13 +55,39 @@
         </div>
     </nav>
 
-    <!-- añadir contenido  -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="product-image">
+            <img id="product-image" class="img-fluid" alt="Product Image">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="product">
+            <h1 id="product-title" class="text-white"></h1>
+            <p id="product-description" class="text-white"></p>
+            <span id="product-price" class="text-white"></span>
+            <button id="add-button" class="btn btn-primary">Añadir</button>
+          </div>
+        </div>
+      </div>
+    </div>
     
-    <!-- añadir footer  -->
+    <!-- TOAST COMPONENT  -->
+    <div class="position-fixed bottom-0 start-50 translate-middle">
+      <div id="toastBuy" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">¡Artículo añadido correctamente!</div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
 
+    <footer class="bg-dark text-bg-dark d-flex align-items-center justify-content-center" style="height: 92px;">
+      <p>Todos los derechos reservados.</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    
+    <script type="module" src="./product-view.js"></script>    
 </body>
 </html>
