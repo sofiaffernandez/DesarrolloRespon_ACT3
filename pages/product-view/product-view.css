@@ -1,0 +1,62 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #3C3C3C;
+  min-height: 100vh;
+}
+
+/* Estilos de los productos */
+.product-image {
+  max-width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+}
+
+.product span{
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.product .btn-primary{
+  background-color:hsl(186, 100%, 27%);
+  border-color: hsl(186, 100%, 27%);
+}
+
+.product .btn-primary:hover, .product .btn-primary:focus, .product .btn-primary:active {
+  background-color: hsl(186, 100%, 27%) !important;
+  border-color: hsl(186, 100%, 27%);
+  box-shadow: none;
+}
+
+/* Estilos del footer */
+footer {
+  background-color: #3C3C3C;
+  color: white;
+  text-align: center;
+  height: 92px;
+  line-height: 92px;
+  width: 100%;
+  bottom: 0;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .product {
+    align-items: flex-start;
+  }
+
+  footer{
+    position: fixed;
+  }
+}
