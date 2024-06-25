@@ -27,16 +27,16 @@ footer {
     border-radius: 0;
 }
 .btn-primary {
-    background-color: #00AAA0;
-    border-color: #00AAA0;
+    background-color: #007D8A;
+    border-color: #007D8A;
     border-radius: 0;
     width: 100%;
-    
+ 
 }
 
 .btn-primary:hover {
-    background-color: #008e87;
-    border-color: #00AAA0;
+    background-color: #007683;
+    border-color: #007683;
     
 }
 

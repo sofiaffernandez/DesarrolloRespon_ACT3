@@ -39,3 +39,25 @@ footer {
     border-color: #007683;
     
 }
+.btn-secondary {
+    background-color: #4ECDC4;
+    border-color: #4ECDC4;
+    border-radius: 0;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background-color: #47b8b1;
+    border-color: #4ECDC4;
+    
+}
+.line-text-container {
+    display: flex;
+    align-items: center;
+}
+.line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: black;
+    margin: 10px;
+}

@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const storedEmail = sessionStorage.getItem('email');
     const storedNombre = sessionStorage.getItem('nombre');
     const storedApellidos = sessionStorage.getItem('apellidos');
+    const storedtelefono = sessionStorage.getItem('telefono');
+    const storeddireccion = sessionStorage.getItem('direccion');
+    const storedcp = sessionStorage.getItem('cp');
+    const storedciudad= sessionStorage.getItem('ciudad');
 
     if (storedEmail) {
         emailInput.value = storedEmail;
@@ -16,6 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (storedApellidos) {
         apellidosInput.value = storedApellidos;
+    }
+    if (storedtelefono) {
+        telefonoInput.value = storedtelefono;
+    }
+    if (storeddireccion) {
+        direccionInput.value = storeddireccion;
+    }
+    if (storedcp) {
+        cpInput.value = storedcp;
+    }
+    if (storedciudad) {
+        ciudadInput.value = storedciudad;
     }
 
     form.addEventListener('submit', function(event) {
@@ -43,6 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('email', email);
         sessionStorage.setItem('nombre', nombre);
         sessionStorage.setItem('apellidos', apellidos);
+        sessionStorage.setItem('telefono', telefono);
+        sessionStorage.setItem('direccion', direccion);
+        sessionStorage.setItem('cp', cp);
+        sessionStorage.setItem('ciudad', ciudad);
 
         showToast("successToast", "Datos guardados correctamente.");
         setTimeout(() => {
