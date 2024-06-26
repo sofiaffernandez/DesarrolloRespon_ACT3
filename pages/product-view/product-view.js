@@ -46,3 +46,27 @@ fetch(URL)
 
     localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
 }
+document.addEventListener("DOMContentLoaded", function() {
+    const logoutLink = document.querySelector("#logout");
+    const usuarioLink = document.querySelector(".nav-link.dropdown-toggle");
+
+  
+    const email = sessionStorage.getItem("email");
+
+    if (email) {
+        
+        logoutLink.textContent = "Salir";
+        logoutLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            sessionStorage.clear();
+            window.location.href = "../login/login.html"
+        });
+    } else {
+       
+        logoutLink.textContent = "Accede";
+        logoutLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            window.location.href = "../login/login.html";
+        });
+    }
+});
