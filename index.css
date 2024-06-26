@@ -1,0 +1,16 @@
+.transitionOpacity {
+    animation: splash 4s linear;
+}
+
+@keyframes splash {
+    0% {
+        opacity: 0;
+    } 35% {
+        opacity: 1;
+    } 65% {
+        opacity: 1;
+    } 90% {
+        opacity: 0;
+    }
+    
+}
