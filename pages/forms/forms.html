@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../../images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="icon" type="image/x-icon" href="./../../images/favicon/favicon.ico">
+    
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <link rel="stylesheet" href="forms.css">
+    <title>Revisa tus datos</title>
+</head>
+<body>
+    <nav>
+        <a href="../../pages/home/home.html">
+            <img src="../../images/prop2-4.png" alt="LogoMinimal"/>
+        </a>
+        <h1>Confirma los datos</h1>
+    </nav>
+    <div class="main-content">
+        <div class="form-container">
+            <form id="datosform" class="form-floating w-100">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre *</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" required placeholder="Tu nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="apellidos" class="form-label">Apellidos *</label>
+                    <input type="text" class="form-control" name="apellidos" id="apellidos" required placeholder="Tus apellidos">
+                </div>
+                <div class="mb-3">
+                    <label for="InputEmail" class="form-label">Email *</label>
+                    <input type="email" class="form-control" name="email" id="InputEmail" placeholder="correo@ejemplo.com" required>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Telefono *</label>
+                    <input type="number" class="form-control" name="telefono" id="telefono" required placeholder="+34 000 00 00 00">
+                </div>
+                <div class="mb-3">
+                    <label for="dirección" class="form-label">Dirección *</label>
+                    <input type="text" class="form-control" name="dirección" id="dirección" required placeholder="Calle ejemplo, 15">
+                </div>
+                <div class="mb-3">
+                    <label for="cp" class="form-label">Código postal *</label>
+                    <input type="number" class="form-control" name="cp" id="cp" required placeholder="CP">
+                </div>
+                <div class="mb-3">
+                    <label for="ciudad" class="form-label">Ciudad *</label>
+                    <input type="text" class="form-control" name="ciudad" id="ciudad" required placeholder="Ciudad">
+                </div>
+                <div class="d-flex justify-content-center m-3">
+                    <button type="submit" class="btn btn-primary mt-2">Proceder al pago</button>
+                </div>
+                <div class="d-flex justify-content-center m-3">
+                    <button type="button" class="btn btn-secondary mt-2" onclick="window.location.href='../home/home.html'">Cancelar</button>
+                </div>    
+            </form>
+        </div>
+    </div>
+
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="errorToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div id="error-toast-body" class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div id="success-toast-body" class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <footer> Todos los derechos reservados.</footer>
+    <script src="./forms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
